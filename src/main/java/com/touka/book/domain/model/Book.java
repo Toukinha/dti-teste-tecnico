@@ -18,21 +18,21 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @NotBlank
+    @NotNull
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @NotBlank
+    @NotNull
+    @Column(name = "author", nullable = false)
     private String author;
 
-    @NotBlank
-    @Min(value = 0)
-    @Max(value = 5)
-    private double rate;
-
+    @NotNull
     @Min(value = 1)
-    private Integer pages;
+    @Column(name = "number_of_pages", nullable = false)
+    private Integer pages = 0;
 
+    @Column(name = "published_date")
     private LocalDate publishedDate;
 }
