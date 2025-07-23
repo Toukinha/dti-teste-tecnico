@@ -17,8 +17,8 @@ class BookRepository implements BookRepositoryInterface {
     private final BookRepositoryJpa jpaRepository;
 
     @Override
-    public Book save(Book book) {
-        return jpaRepository.save(book);
+    public void save(Book book) {
+        jpaRepository.save(book);
     }
 
     @Override
