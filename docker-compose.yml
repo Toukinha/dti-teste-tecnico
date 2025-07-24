@@ -1,9 +1,13 @@
 services:
-  book-cli:
+  books-cli:
     build: .
+    image: books-cli
+    container_name: books-cli
     stdin_open: true
     tty: true
     volumes:
       - ./data:/app/data
     environment:
       SPRING_DATASOURCE_URL: jdbc:sqlite:/app/data/books.db
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.sqlite.JDBC
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
