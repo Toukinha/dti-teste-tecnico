@@ -1,0 +1,9 @@
+services:
+  book-cli:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./data:/app/data
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:sqlite:/app/data/books.db
